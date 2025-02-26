@@ -15,13 +15,13 @@ export default function TrendingMovies(){
   
     useEffect(() => {
         const fetchFilms = async () => {
-        try {
-            const response = await fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US`, options);
-            const data = await response.json();
-            setFilms(data.results);
-        } catch (error) {
-            console.error('Erreur lors du chargement des films :', error);
-        }
+            try {
+                const response = await fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US`, options);
+                const data = await response.json();
+                setFilms(data.results);
+            } catch (error) {
+                console.error('Erreur lors du chargement des films :', error);
+            }
         };
 
         fetchFilms();
